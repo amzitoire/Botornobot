@@ -61,3 +61,11 @@ The code is fully deterministic given a fixed random seed. All preprocessing ste
 The model is designed to be conservative, prioritizing precision over recall due to the asymmetric competition scoring. This reduces the number of false positives, which are significantly penalized.
 
 The approach is robust across datasets and languages and does not rely on dataset-specific tuning.
+
+## Requirements
+
+The implementation was developed in Python and relies on standard machine learning and NLP libraries. The main dependencies are NumPy, pandas, scikit-learn, LightGBM, PyTorch, transformers, and sentence-transformers.
+
+A minimal `requirements.txt` file is provided in the repository.
+
+The code was developed and tested on a machine equipped with an Intel Core i7-14700 processor and an NVIDIA GeForce RTX 4060 Ti GPU. However, the pipeline is not strictly GPU-dependent. The tabular and TF-IDF parts run normally on CPU, and the full system can also be executed on CPU only. The main difference is that the embedding extraction stage becomes slower without GPU acceleration.
